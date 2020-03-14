@@ -26,9 +26,9 @@ const App = (props) => {
                 <button onClick={() => props.inputNumber('1')}>1</button>
                 <button onClick={() => props.inputNumber('2')}>2</button>
                 <button onClick={() => props.inputNumber('3')}>3</button>
-                <button className="color-operation"  onClick={() => props.inputOperator('+')}>+</button>
-                <button className="zero"  onClick={() => props.inputNumber('0')}>0</button>
-                <button className="dot"  onClick={() => props.inputDot('.')}>.</button>
+                <button className="color-operation" onClick={() => props.inputOperator('+')}>+</button>
+                <button className="zero" onClick={() => props.inputNumber('0')}>0</button>
+                <button className="dot" onClick={() => props.inputDot('.')}>.</button>
                 <button className="color-operation" onClick={props.onEqual}>=</button>
             </div>
         </div>

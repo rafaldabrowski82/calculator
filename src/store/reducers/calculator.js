@@ -61,7 +61,10 @@ const CalculatorReducer = (state = initialState, action) => {
         case 'OPERATOR':
             const actualResultOperator = state.result;
 
-            if(actualResultOperator[actualResultOperator.length-1] === '.') {
+            if(actualResultOperator[actualResultOperator.length-1] === '-' ||
+                actualResultOperator[actualResultOperator.length-1] === '+' ||
+                actualResultOperator[actualResultOperator.length-1] === '*' ||
+                actualResultOperator[actualResultOperator.length-1] === '/') {
                 return{
                     ...state,
                 };
