@@ -2,7 +2,6 @@ import * as math from 'mathjs';
 
 let initialState = {
     result: '0',
-    savedResult: [],
 };
 
 const CalculatorReducer = (state = initialState, action) => {
@@ -32,6 +31,20 @@ const CalculatorReducer = (state = initialState, action) => {
                     ...state,
                 };
             }
+        case 'PERCENT':
+            const actualStatePercent = state.result + '/100';
+
+            return {
+                ...state,
+                result: math.evaluate(actualStatePercent).toString(),
+            };
+        case 'TOGGLE':
+            const displayValue = state.result;
+
+            return{
+                ...state,
+                result: displayValue.charAt(0) === '-' ? displayValue.substr(1) : '-' + displayValue,
+            };
         case 'NUMBER':
             if(state.result === '0') {
                 return{
